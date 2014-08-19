@@ -49,7 +49,14 @@ block 'bootstrap', :path => 'bower_components/bootstrap-sass-twbs/assets' do |bo
     end
   end
 
+  block 'navbar' do
+    dependency bootstrap.route 'navs'
+    dependency bootstrap.route 'forms'
+  end
+
   block 'js' do |js|
+
+    dependency bootstrap.route 'component-animations'
 
     block 'affix' do
       js_file 'javascripts/bootstrap/affix.js'
@@ -74,6 +81,7 @@ block 'bootstrap', :path => 'bower_components/bootstrap-sass-twbs/assets' do |bo
     end
 
     block 'dropdown' do
+      dependency bootstrap.route 'dropdowns'
       js_file 'javascripts/bootstrap/dropdown.js'
     end
 
