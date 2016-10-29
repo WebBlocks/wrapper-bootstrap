@@ -1,4 +1,7 @@
-block 'bootstrap', :path => 'bower_components/bootstrap-sass-twbs/assets' do |bootstrap|
+require 'web_blocks/facade/external_component_block'
+register_facade :external_component_block, ::WebBlocks::Facade::ExternalComponentBlock
+
+external_component_block 'bootstrap-sass-twbs', :path => 'bower_components/bootstrap-sass-twbs/assets' do |bootstrap|
 
   block 'variables' do
     scss_file 'stylesheets/bootstrap/_variables.scss'
